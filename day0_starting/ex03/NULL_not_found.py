@@ -1,12 +1,15 @@
-import math
 
 def NULL_not_found(object: any) -> int:
+
+    # we should check the type AND if the object is acually empty/NULL/NaN/...
+    # hard one to find is None.
+    
     x = type(object)
 
     if object is None:
         print("Nothing:", object, x)
         return 0
-    elif (x == float and math.isnan(object)):
+    elif (x == float):
         print("Cheese:", object, x)
         return 0
     elif (x == int and object == 0):

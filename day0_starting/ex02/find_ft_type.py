@@ -1,5 +1,8 @@
 def all_thing_is_obj(object: any) -> int:
 
+    # pretty straightforward, the clue is everything should be hardcoded from : "Type not found"
+    # also the difference between type(object) and the object himself
+    
     x = type(object)
 
     if (x == list):

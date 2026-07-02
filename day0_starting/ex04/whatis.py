@@ -15,7 +15,9 @@ except AssertionError as e:
     print(f"AssertionError: {e}")
     sys.exit(0)
 
-# little going around the subject here, you can't assert that a string is an int if argv[1] can't already be converted to an int (raise an error)
+# little going around the subject here,
+# you can't assert that a string is an int if argv[1]
+# can't already be converted to an int (raise an error)
 # casting is a good idea tho
 try:
     nb = int(sys.argv[1])

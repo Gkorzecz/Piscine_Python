@@ -61,11 +61,16 @@ def main():
 
         # we just need to not print space at the end,
         # note that print add a \n by default, change with "end="
-        for i in range(len(upper_text)):
-            if i != len(upper_text) - 1:
-                print(morse_code[upper_text[i]], end=" ")
-            else:
-                print(morse_code[upper_text[i]])
+        # for i in range(len(upper_text)):
+        #     if i != len(upper_text) - 1:
+        #         print(morse_code[upper_text[i]], end=" ")
+        #     else:
+        #         print(morse_code[upper_text[i]])
+        
+        # better version:
+        for i in range(len(upper_text) - 1):
+            print(morse_code[upper_text[i]], end=" ")
+        print(morse_code[upper_text[len(upper_text) - 1]])
 
     except AssertionError as e:
         print(f"AssertionError: {e}")

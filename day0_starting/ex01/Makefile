@@ -7,7 +7,7 @@ FILENAME := format_ft_time.py
 all: run
 
 run:
-	docker run --rm -it -v "$$PWD":/app -w /app $(PYTHON_VERSION) python $(FILENAME)
+	@docker run --rm -it -v "$$PWD":/app -w /app $(PYTHON_VERSION) python $(FILENAME)
 
 fclean:
 	-docker rmi $(PYTHON_VERSION)

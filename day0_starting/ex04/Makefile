@@ -7,7 +7,7 @@ FILENAME := whatis.py
 all: run
 
 run:
-	@docker run --rm -it -v "$$PWD":/app -w /app $(PYTHON_VERSION) python $(FILENAME) 1 1
+	@docker run --rm -it -v "$$PWD":/app -w /app $(PYTHON_VERSION) python $(FILENAME)
 
 
 
