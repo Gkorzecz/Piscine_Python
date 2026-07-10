@@ -3,6 +3,7 @@ import numpy as np
 
 
 def verify_extension(path: str) -> bool:
+    """Check for extension in filename, only jpg and jpeg"""
     file_extension = ["jpg", "jpeg"]
 
     if '.' in path:
@@ -19,6 +20,7 @@ def verify_extension(path: str) -> bool:
 
 
 def ft_load(path: str) -> np.ndarray:
+    """Load image with matplotlib"""
     try:
         if verify_extension(path) is False:
             return None

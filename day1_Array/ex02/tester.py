@@ -1,6 +1,10 @@
 from load_image import ft_load
 
 
+print("\033[1mSubject Test :\033[0m")
+print(ft_load("landscape.jpg"))
+print()
+
 print("\033[1mWrong extension (.png) :\033[0m")
 print(ft_load("wrong_extension.png"))
 print()

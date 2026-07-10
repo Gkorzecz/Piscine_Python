@@ -26,7 +26,7 @@ def ft_load(path: str) -> np.ndarray:
             return None
 
         image = plt.imread(path)
-        print(f"The shape of image is: {image.shape}")
+        # print(f"The shape of image is: {image.shape}")
         return image
 
     except Exception as error:
