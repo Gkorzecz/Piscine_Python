@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 def verify_extension(path: str) -> bool:
     """Check for extension in filename, only csv"""
     file_extension = ["csv"]
