@@ -19,8 +19,9 @@ import numpy as np
 #     except Exception as error:
 #         print(f"Error while zooming image: {error}")
 
-
-def ft_transpose(image):
+# you could define it : def ft_transpose(image):
+def ft_transpose(image: np.ndarray) -> np.ndarray:
+    """Apply the transpose operation do a numpy array"""
     height = image.shape[0]
     width = image.shape[1]
     channels = image.shape[2]
@@ -39,6 +40,7 @@ def ft_transpose(image):
 
 
 def main():
+    """Zoom then transpose the image, which is rotation for pixels"""
     image = ft_load("animal.jpeg")
 
     if image is None:

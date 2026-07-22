@@ -2,6 +2,23 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
+def check_rgb_image(image: np.ndarray) -> bool:
+    """check if the shape of the image is correct"""
+    if not isinstance(image, np.ndarray):
+        print("Error: image is not a NumPy array")
+        return False
+
+    if len(image.shape) != 3:
+        print("Error: image does not have 3 dimensions")
+        return False
+
+    if image.shape[2] != 3:
+        print("Error: image does not have 3 RGB channels")
+        return False
+
+    return True
+
+
 def verify_extension(path: str) -> bool:
     """Check for extension in filename, only jpg and jpeg"""
     file_extension = ["jpg", "jpeg"]
@@ -26,6 +43,9 @@ def ft_load(path: str) -> np.ndarray:
             return None
 
         image = plt.imread(path)
+        if check_rgb_image(image) is False:
+            return None
+
         print(f"The shape of image is: {image.shape}")
         return image
 

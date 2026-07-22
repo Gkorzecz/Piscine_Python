@@ -3,6 +3,7 @@ from load_image import ft_load
 
 
 def main() -> None:
+    """'Zoom' on the image by slicing it to new coordinates, chose 1 channel"""
     image = ft_load("animal.jpeg")
 
     if image is None:

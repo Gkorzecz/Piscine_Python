@@ -3,7 +3,7 @@ from load_csv import load
 
 
 def main():
-    """Load a dataset, and show """
+    """Load a dataset, and show life expectancy projections for France"""
     data = load("life_expectancy_years.csv")
 
     # select the row designed "France"

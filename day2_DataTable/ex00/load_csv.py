@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 def verify_extension(path: str) -> bool:
     """Check for extension in filename, only csv"""
     file_extension = ["csv"]
@@ -34,6 +35,7 @@ def load(path: str) -> pd.DataFrame:
         return None
     return df
 
+
 def main():
     print("\033[1mSubject Test :\033[0m")
     print(load("life_expectancy_years.csv"))
@@ -54,6 +56,7 @@ def main():
     print("\033[1mEmpty:\033[0m")
     print(load("empty_data.csv"))
     print()
+
 
 if __name__ == "__main__":
     main()
