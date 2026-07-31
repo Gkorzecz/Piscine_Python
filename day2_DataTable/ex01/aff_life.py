@@ -4,6 +4,7 @@ from load_csv import load
 
 def main():
     """Load a dataset, and show life expectancy projections for France"""
+    """Load the dataset and display France's life expectancy."""
     data = load("life_expectancy_years.csv")
 
     france = data[data["country"] == "France"]
@@ -17,8 +18,13 @@ def main():
     plt.xticks(range(years.min(), years.max(), 40))
 
     plt.title("France Life expectancy Projections")
+
+    plt.title("France Life Expectancy Projections")
     plt.ylabel("Life expectancy")
     plt.xlabel("Year")
+
+    plt.xticks(range(years.min(), years.max() + 1, 40))
+
     plt.show()
 
 
