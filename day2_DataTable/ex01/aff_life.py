@@ -6,15 +6,16 @@ def main():
     """Load a dataset, and show life expectancy projections for France"""
     data = load("life_expectancy_years.csv")
 
-    # select the row designed "France"
     france = data[data["country"] == "France"]
-    # print(france)
 
-    years = data.columns[1:]
+    years = data.columns[1:].astype(int)
     life_expectancy = france.iloc[0, 1:]
-    # print(life_expectancy)
 
     plt.plot(years, life_expectancy)
+
+    # Show one tick every 40 years
+    plt.xticks(range(years.min(), years.max(), 40))
+
     plt.title("France Life expectancy Projections")
     plt.ylabel("Life expectancy")
     plt.xlabel("Year")
