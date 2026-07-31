@@ -1,19 +1,18 @@
 import matplotlib.pyplot as plt
-from matplotlib.ticker import FuncFormatter
 from load_csv import load
 
 
 def convert_population(value):
     value = str(value)
 
+    if value.endswith("k"):
+        return float(value[:-1]) * 1000
     if value.endswith("M"):
-        return float(value[:-1]) * 1_000_000
+        return float(value[:-1]) * 1000000
+    if value.endswith("B"):
+        return float(value[:-1]) * 1000000000
 
     return float(value)
-
-
-def millions_formatter(value, position):
-    return f"{int(value / 1_000_000)}M"
 
 
 def main():
@@ -29,14 +28,16 @@ def main():
     population_belgium = belgium.iloc[0, 1:252].apply(convert_population)
 
     plt.plot(years, population_belgium, label="Belgium")
-    plt.plot(years, population_france, label="France")
+    plt.plot(years, population_france, label="France", color="green")
 
     plt.title("Population Projections")
     plt.xlabel("Year")
     plt.ylabel("Population")
 
     plt.xticks(range(1800, 2050, 40))
-    plt.gca().yaxis.set_major_formatter(FuncFormatter(millions_formatter))
+
+    yticks = range(0, 79000000, 20000000)
+    plt.yticks(yticks, [f"{y // 1000000}M" for y in yticks])
 
     plt.legend()
     plt.show()
